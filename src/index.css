@@ -470,3 +470,7 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+main {
+  padding-top: 5rem;
+}
