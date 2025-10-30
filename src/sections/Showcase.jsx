@@ -93,96 +93,40 @@ const Showcase = () => {
     <section
       id="work"
       ref={sectionRef}
-      className="app-showcase"
-      style={{
-        padding: "4rem 0",
-        background: "#0a0a0a",
-        minHeight: "100vh",
-      }}
+      className="app-showcase py-16 bg-[#0a0a0a] min-h-screen"
     >
       <div className="container mx-auto px-4">
-        <h2
-          className="text-4xl font-bold mb-10 text-center"
-          style={{
-            letterSpacing: "0.02em",
-            color: "#fff",
-          }}
-        >
+        <h2 className="text-4xl font-bold mb-10 text-center tracking-wider text-white">
           Featured Projects
         </h2>
-        <div
-          className="grid gap-8 md:grid-cols-2"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "2.5rem",
-          }}
-        >
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 grid-cols-1">
           {projects.map((project, idx) => (
             <div
               key={project.title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 group hover:-translate-y-2 hover:shadow-2xl`}
-              style={{
-                background: "#18181b",
-                border: "1px solid #232329",
-                minHeight: 420,
-                height: "100%",
-                boxShadow:
-                  "0 4px 24px 0 rgba(0,0,0,0.12), 0 1.5px 4px 0 rgba(0,0,0,0.08)",
-                transform: "translateY(0)",
-                display: "flex",
-                flexDirection: "column",
-              }}
+              className="rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 group hover:-translate-y-2 hover:shadow-2xl bg-[#18181b] border border-[#232329] min-h-[420px] h-full"
             >
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "100%",
-                }}
-                className="group"
+                className="flex flex-col h-full group"
               >
                 <div
-                  className={`w-full h-56 ${project.bg} flex items-center justify-center`}
-                  style={{
-                    overflow: "hidden",
-                    transition: "transform 0.3s",
-                    borderBottom: "2px solid #232329",
-                  }}
+                  className={`w-full h-56 ${project.bg} flex items-center justify-center overflow-hidden transition-transform duration-300 border-b-2 border-[#232329]`}
                 >
                   <img
                     src={project.image}
                     alt={project.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      transition: "transform 0.3s",
-                    }}
-                    className="group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div
-                  className="p-6 flex flex-col flex-1 justify-between"
-                  style={{
-                    minHeight: "220px",
-                    flex: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+                <div className="p-6 flex flex-col flex-1 justify-between min-h-[220px]">
                   <div>
-                    <h3 className={`text-2xl font-semibold mb-2 text-white`}>
+                    <h3 className="text-2xl font-semibold mb-2 text-white">
                       {project.title}
                     </h3>
-                    <p
-                      className={`mb-4 text-base leading-relaxed text-white`}
-                      style={{ opacity: 0.85 }}
-                    >
+                    <p className="mb-4 text-base leading-relaxed text-white opacity-85">
                       {project.description}
                     </p>
                   </div>
@@ -191,19 +135,8 @@ const Showcase = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        display: "inline-block",
-                        padding: "0.5rem 1.25rem",
-                        background: project.buttonBg,
-                        color: "#fff",
-                        borderRadius: "0.5rem",
-                        fontWeight: 600,
-                        textDecoration: "none",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                        transition:
-                          "background 0.2s, transform 0.2s, color 0.2s",
-                        border: "none",
-                      }}
+                      className="inline-block px-5 py-2 text-white rounded-lg font-semibold no-underline shadow-md transition-all duration-200"
+                      style={{ background: project.buttonBg }}
                       onMouseOver={(e) =>
                         (e.currentTarget.style.background =
                           project.buttonHoverBg)
@@ -218,20 +151,7 @@ const Showcase = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        display: "inline-block",
-                        padding: "0.5rem 1.25rem",
-                        background: "#232329",
-                        color: "#fff",
-                        borderRadius: "0.5rem",
-                        fontWeight: 600,
-                        textDecoration: "none",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                        transition:
-                          "background 0.2s, transform 0.2s, color 0.2s",
-                        border: "none",
-                      }}
-                      className="hover:bg-[#333]"
+                      className="inline-block px-5 py-2 bg-[#232329] text-white rounded-lg font-semibold no-underline shadow-md transition-all duration-200 hover:bg-[#333]"
                     >
                       Live Demo
                     </a>

@@ -7,10 +7,12 @@ import Hero from "./sections/Hero";
 import Showcase from "./sections/Showcase";
 import TechStack from "./sections/TechStack";
 import Navbar from "./components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <>
+      <Toaster />
       <Navbar />
       <Hero />
       <Showcase />

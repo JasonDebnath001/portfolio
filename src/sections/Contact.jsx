@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Title from "../components/Title";
 import ContactExperience from "../components/heroModels/ContactExperience";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,10 +38,10 @@ const Contact = () => {
         formRef.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Ahh, something went wrong. Please try again.");
+      toast.error("Ahh, something went wrong. Please try again.");
       console.log(error);
     } finally {
       setLoading(false);

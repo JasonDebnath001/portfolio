@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const GlowCard = ({ card, children, index }) => {
+const GlowCard = ({ testimonial, index }) => {
   const cardRef = useRef([]);
 
   const handleMouseMove = (index) => (e) => {
@@ -37,9 +37,15 @@ const GlowCard = ({ card, children, index }) => {
         ))}
       </div>
       <div className="mb-5">
-        <p className="text-white-50 text-lg">{card.review}</p>
+        <p className="text-white-50 text-lg">{testimonial.review}</p>
       </div>
-      {children}
+      <div className="flex items-center gap-3">
+        <div>
+          <img src={testimonial.imgPath} alt={testimonial.name} />
+        </div>
+        <p className="font-bold">{testimonial.name}</p>
+        <p className="text-white-50">{testimonial.mentions}</p>
+      </div>
     </div>
   );
 };
