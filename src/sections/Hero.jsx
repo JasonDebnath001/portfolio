@@ -74,7 +74,7 @@ const Hero = () => {
           </div>
         </header>
         {/* right hero content */}
-        <figure>
+        <figure className="relative z-20">
           <div className="hero-3d-layout">
             <Suspense fallback={<div>Loading...</div>}>
               <HeroExperience />
