@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../components/Title";
-import { techStackIcons, techStackImgs } from "../constants";
-import TechIcon from "../components/models/techLogos/TechIcon";
+import { techStackImgs } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -36,7 +35,7 @@ const TechStack = () => {
         />
 
         <div className="tech-grid">
-          {/* {techStackIcons.map((icon) => (
+          {techStackImgs.map((icon) => (
             <div
               key={icon.name}
               className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg"
@@ -44,27 +43,14 @@ const TechStack = () => {
               <div className="tech-card-animated-bg" />
               <div className="tech-card-content">
                 <div className="tech-icon-wrapper">
-                  <TechIcon model={icon} />
+                  <img src={icon.imgPath} alt="tech" />
                 </div>
                 <div className="padding-x w-full">
                   <p>{icon.name}</p>
                 </div>
               </div>
             </div>
-          ))} */}
-          {techStackImgs.map((icon)=>(
-                <div className='card-border tech-card overflow-hidden group xl:rounded-full rounded-lg'>
-                    <div className='tech-card-animated-bg' />
-                    <div className='tech-card-content'>
-                        <div className="tech-icon-wrapper">
-                            <img src={icon.imgPath} alt="tech" />
-                        </div>
-                        <div className='padding-x w-full'>
-                            <p>{icon.name}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
+          ))}
         </div>
       </div>
     </div>
