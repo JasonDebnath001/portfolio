@@ -14,13 +14,15 @@ const App = () => {
     <>
       <Toaster />
       <Navbar />
-      <Hero />
-      <Showcase />
-      <FeatureCards />
-      <Experience />
-      <TechStack />
-      <Contact />
-      <Footer />
+      <main>
+        <Hero />
+        <Showcase />
+        <FeatureCards />
+        <Experience />
+        <TechStack />
+        <Contact />
+        <Footer />
+      </main>
     </>
   );
 };
